@@ -1,6 +1,7 @@
 import { useProducts } from "../context/ProductContext"
 import styles from "./ProductsPage.module.css"
 import Card from "../components/Card";
+import Loader from "../components/Loader";
 
 
 function ProductsPage() {
@@ -8,10 +9,10 @@ function ProductsPage() {
   return (
     <div className={styles.container} >
         <div className={styles.products} >
-            {/* {[!products.length] && <p>Loading ...</p> } */}
-            {products?.map((p)=> (
+            {products ? products.map((p)=> (
                 <Card key={p.id} data={p} />
-            ))}
+            )) : <Loader/> }
+            
         </div>
         <div>sidebar</div>
     </div>
