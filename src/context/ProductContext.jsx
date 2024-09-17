@@ -10,7 +10,7 @@ function ProductProvider({children}) {
     useEffect(()=>{
         const fetchProducts = async () => {
             try {
-                setProducts(await api.get("/products"))
+                setProducts([await api.get("/products")])
             } catch (error) {
                 console.log(error)
             }
