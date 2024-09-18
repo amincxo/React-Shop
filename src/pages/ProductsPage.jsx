@@ -13,20 +13,25 @@ function ProductsPage() {
 
     const [displayed , setDisplayed] = useState([]);
     const [search , setSearch] = useState("");
+    const [query , setQuery] = useState({})
 
     useEffect(()=>{
         setDisplayed(products)
-    },[products])
+    },[products ])
+
+    useEffect(()=> {
+        console.log(query)
+    },[query])
 
     const searchHandler = () => {
-        console.log(search)
+        setQuery(query => ({...query, search}))
     }
 
     const categoryHandler = (event) => {
         const {tagName} = event.target;
         const category = event.target.getAttribute('name').toLowerCase();
         if(tagName !=="LI") return;
-        console.log(category)
+        setQuery(query => ({...query , category}) )
 }
 
   return (
