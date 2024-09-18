@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ImSearch } from "react-icons/im";
+import { FaListUl } from "react-icons/fa";
+
 import Card from "../components/Card";
 import Loader from "../components/Loader";
 import { useProducts } from "../context/ProductContext"
@@ -15,6 +17,12 @@ function ProductsPage() {
         console.log(search)
     }
 
+    const categoryHandler = (event) => {
+        const {tagName} = event.target;
+        const category = event.target.getAttribute('name').toLowerCase();
+        if(tagName !=="LI") return;
+        console.log(category)
+}
 
   return (
     <>
@@ -31,7 +39,19 @@ function ProductsPage() {
                 )) : <Loader/> }
                 
             </div>
-            <div>sidebar</div>
+            <div>
+                <div>
+                    <FaListUl />
+                    <p>دسته بندی ها</p>
+                </div>
+                <ul onClick={categoryHandler} >
+                    <li name="All" >همه</li>
+                    <li name="Electronics" >لوازم برقی</li>
+                    <li name="Jewelery" >جواهرات</li>
+                    <li name="Men's Clothing" >لباس مردانه</li>
+                    <li name="Women's Clothing" >لباس زنانه</li>
+                </ul>
+            </div>
         </div>
     </>
   )
