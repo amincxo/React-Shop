@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import { useProducts } from "../context/ProductContext"
 
+import { filterProducts, searchProducts } from "../helper/helper";
 import styles from "./ProductsPage.module.css"
 
 function ProductsPage() {
@@ -20,7 +21,9 @@ function ProductsPage() {
     },[products ])
 
     useEffect(()=> {
-        console.log(query)
+        let finalProducts = searchProducts(products , query.search) ;
+        finalProducts = filterProducts(finalProducts , query.category);
+        setDisplayed(finalProducts);
     },[query])
 
     const searchHandler = () => {
