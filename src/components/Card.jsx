@@ -10,9 +10,10 @@ function Card({data}) {
     const {id, title , image , price } = data;
 
     const [state , dispatch] = useCard();
+    console.log(state)
 
     const cliclHandler = () => {
-        dispatch({type : "add" , payload: data})
+        dispatch({type : "ADD_ITEM" , payload: data})
     }
   return (
     <div className={styles.card} >

@@ -14,7 +14,6 @@ import SideBar from "../components/SideBar";
 
 function ProductsPage() {
     const [products] = useProducts();
-
     const [displayed , setDisplayed] = useState([]);
     const [search , setSearch] = useState("");
     const [query , setQuery] = useState({})
