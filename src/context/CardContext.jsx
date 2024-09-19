@@ -20,7 +20,7 @@ const reducer = (state ,action) => {
                 ...sumProducts(state.selectedItems)
             }
         case "REMOVE_ITEM":
-            const newSelectecItems = state.selectedItems.filter(item => item.id !== acction.payload.id);
+            const newSelectecItems = state.selectedItems.filter((item) => item.id !== action.payload.id);
             return {
                 ...state,
                 selectedItems:[...newSelectecItems],

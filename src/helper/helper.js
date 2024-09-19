@@ -45,4 +45,13 @@ const sumProducts = (products) => {
     return{itemsCounter , total };
 }
 
-export {shortenText , searchProducts , filterProducts , createQueryObject, sumProducts ,getInitialQuery};
+const productQuantity = (state , id ) => {
+    const index = state.selectedItems.findIndex(item => item.id === id);
+    if (index === -1 ) {
+        return 0;
+    }else {
+        return state.selectedItems[index].quantity;
+    }
+}
+
+export {shortenText, productQuantity , searchProducts , filterProducts , createQueryObject, sumProducts ,getInitialQuery};
