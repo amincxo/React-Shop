@@ -12,11 +12,11 @@ function Layout({children}) {
     <>
         <header className={styles.header} >
             <Link to={"/products"} >AminShop</Link>
-            <Link to={"/checkout"} > <PiShoppingCartSimpleBold/>
             <div>
+                <Link to={"/checkout"} > <PiShoppingCartSimpleBold/>
                 {state.itemsCounter && <span>{state.itemsCounter}</span>}
+                </Link>
             </div>
-            </Link>
         </header>
         {children}
         <footer className={styles.footer} >
