@@ -13,8 +13,9 @@ function Layout({children}) {
         <header className={styles.header} >
             <Link to={"/products"} >AminShop</Link>
             <div>
-                <Link to={"/checkout"} > <PiShoppingCartSimpleBold/>
-                {state.itemsCounter && <span>{state.itemsCounter}</span>}
+                <Link to={"/checkout"} > 
+                <PiShoppingCartSimpleBold/>
+                {!!state.itemsCounter && <span>{state.itemsCounter}</span>}
                 </Link>
             </div>
         </header>
