@@ -11,7 +11,6 @@ function Card({data}) {
     const {id, title , image , price } = data;
 
     const [state , dispatch] = useCard();
-    console.log(state.itemsCounter)
 
     const quantity = productQuantity(state , id)
     const cliclHandler = (type) => {

@@ -7,7 +7,6 @@ import styles from "./Layout.module.css"
 
 function Layout({children}) {
     const [state] = useCard();
-    console.log(state)
   return (
     <>
         <header className={styles.header} >
